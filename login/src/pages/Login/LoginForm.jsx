@@ -4,29 +4,40 @@ import LeftImage from "./image.png";
 
 const LoginContainer = styled.div`
   display: flex;
-  height: 97vh;
   align-items: center;
   justify-content: center;
   font-family: Arial, sans-serif;
-  padding: 23px 23px 23px 99px;
+  
+  @media (max-width:720px) {
+    flex-direction: column;
+  }
 `;
 
 const LeftSection = styled.div`
   flex: 1;
+  width: 50%;
+  margin: 23px;
 `;
 
 const Image = styled.img`
   width: 300px; /* Adjust the width as needed */
-  height: auto; /* Adjust the height as needed */
   border-radius: 5px;
+  display: block;
+  margin: auto;
+
+  @media (max-width:720px) {
+    width: 175px;
+  
+  }
 `;
 
 const RightSection = styled.div`
-  width: 745px;
+  width: 50%;
   height: 571px;
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin: 23px;
   align-items: center;
   padding: 30px;
   justify-content: center;
@@ -39,8 +50,7 @@ const LoginForm = styled.form`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  margin: 95px;
-
+  margin: auto;
 `;
 
 const Heading = styled.h1`
@@ -90,6 +100,7 @@ const PasswordInput = styled.input`
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
+  
 `;
 
 const EyeIcon = styled.img`
@@ -113,7 +124,7 @@ const CheckboxContainer = styled.div`
 `;
 
 const Button = styled.button`
-  width: 538px;
+  width: 90%;
   height: 56px;
   margin: auto;
   margin-top: 25px;
@@ -127,6 +138,11 @@ const Button = styled.button`
   letter-spacing: 0em;
   text-align: center;
   cursor: pointer;
+  transition: 0.5s ease;
+
+  &:hover {
+    background: #135e86;
+  }
 `;
 
 const RegisterText = styled.p`
@@ -174,6 +190,7 @@ const Login = () => {
               onClick={togglePasswordVisibility}
             />
           </PasswordInputContainer>
+          
           <CheckboxContainer>
             <input type="checkbox" id="rememberMe" />
             <label htmlFor="rememberMe">Remember me</label>
