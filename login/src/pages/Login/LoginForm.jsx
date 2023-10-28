@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import LeftImage from './image.png'
+import LeftImage from "./image.png";
+
 const LoginContainer = styled.div`
   display: flex;
-  height: 100vh;
+  height: 97vh;
   align-items: center;
   justify-content: center;
   font-family: Arial, sans-serif;
+  padding: 23px 23px 23px 99px;
 `;
 
 const LeftSection = styled.div`
@@ -20,46 +22,59 @@ const Image = styled.img`
 `;
 
 const RightSection = styled.div`
+  width: 745px;
+  height: 571px;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 30px;
   justify-content: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 40px;
   border-radius: 10px;
 `;
 
 const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
+  margin: 95px;
+
 `;
 
 const Heading = styled.h1`
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 53px;
+  margin: auto;
   letter-spacing: 0em;
   text-align: center;
   color: #ffffff;
-  background: linear-gradient(0deg, #04072F, #04072F),
+  background: linear-gradient(0deg, #04072f, #04072f),
     linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 20px;
+`;
+
+const Title = styled.label`
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 23px;
 `;
 
 const Input = styled.input`
-  width: 824px;
+  margin-top: 23px;
+  width: 100%;
   height: 56px;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
+ 
 `;
 
 const PasswordInputContainer = styled.div`
@@ -68,7 +83,7 @@ const PasswordInputContainer = styled.div`
 `;
 
 const PasswordInput = styled.input`
-  width: 824px;
+  width: 100%;
   height: 56px;
   padding: 10px;
   margin: 10px 0;
@@ -89,20 +104,23 @@ const EyeIcon = styled.img`
 
 const CheckboxContainer = styled.div`
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start; 
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-start;
   margin: 10px 0;
+  color: #737b86;
   font-size: 16px;
 `;
 
 const Button = styled.button`
   width: 538px;
   height: 56px;
-  margin: 10px 0;
+  margin: auto;
+  margin-top: 25px;
   border-radius: 8px;
-  background: #1575A7;
+  background: #1575a7;
   color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
@@ -112,18 +130,15 @@ const Button = styled.button`
 `;
 
 const RegisterText = styled.p`
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 27px;
   letter-spacing: 0em;
   text-align: left;
-  color: #ffffff;
-  background: linear-gradient(0deg, #F78719, #F78719),
-    linear-gradient(0deg, #04072F, #04072F);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 10px;
+  color: #000;
+  margin-top: 25px;
+  margin: auto;
 `;
 
 const Login = () => {
@@ -141,7 +156,9 @@ const Login = () => {
       <RightSection>
         <LoginForm>
           <Heading>Login</Heading>
+          <Title>Login ID</Title>
           <Input type="text" placeholder="Enter login ID" />
+          <Title>Password</Title>
           <PasswordInputContainer>
             <PasswordInput
               type={showPassword ? "text" : "password"}
@@ -163,7 +180,12 @@ const Login = () => {
           </CheckboxContainer>
           <CheckboxContainer>
             <input type="checkbox" id="agreeTerms" />
-            <label htmlFor="agreeTerms">Agree to Terms & Conditions</label>
+            <label htmlFor="agreeTerms">
+              Agree to{" "}
+              <span style={{ color: "orange", textDecoration: "underline" }}>
+                Terms & Conditions
+              </span>
+            </label>
           </CheckboxContainer>
           <Button type="submit">Login</Button>
           <RegisterText>Don't have an account? Register</RegisterText>
